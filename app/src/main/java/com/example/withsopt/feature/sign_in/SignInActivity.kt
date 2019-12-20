@@ -64,7 +64,7 @@ class SignInActivity : AppCompatActivity() {
                 // 팔로워 페이지로 이동
                 val intent = Intent(this, FollowerListActivity::class.java)
                 // id 함께 전달
-                intent.putExtra("login", id)
+                intent.putExtra("id", id)
                 startActivity(intent)
             }
             else { // 로그인 실패
