@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feature.follower_list.FollowerListActivity"></activity>
+        <activity android:name=".feature.git_repo_list.GitRepoListActivity"></activity>
+        <activity android:name=".feature.follower_list.FollowerListActivity" />
         <activity android:name=".feature.sign_up.SignUpActivity" />
         <activity android:name=".feature.sign_in.SignInActivity">
             <intent-filter>

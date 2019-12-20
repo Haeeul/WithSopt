@@ -16,7 +16,7 @@ class FollowerListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_follower_list)
 
-        rvFollowerList = findViewById(R.id.rv_follower_list)
+        rvFollowerList = findViewById(R.id.rv_gitrepo_list)
 
         followerAdapter = FollowerAdapter(this)
 
