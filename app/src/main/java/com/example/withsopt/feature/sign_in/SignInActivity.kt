@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.withsopt.DB.Login
 import com.example.withsopt.R
 import com.example.withsopt.feature.follower_list.FollowerListActivity
 import com.example.withsopt.feature.sign_up.SignUpActivity
@@ -24,6 +25,15 @@ class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
+
+        // 자동로그인
+        val id = Login.getUser(this)
+        if(id.isNotEmpty()){
+            val intent = Intent(this, FollowerListActivity::class.java)
+            // id 함께 전달
+            intent.putExtra("id", id)
+            startActivity(intent)
+        }
 
         edtSignInId = findViewById(R.id.edtSignInId)
         edtSignInPw = findViewById(R.id.edtSignInPw)
@@ -61,6 +71,8 @@ class SignInActivity : AppCompatActivity() {
 
             // 로그인 성공
             if (response) {
+                // 로그인 정보 저장
+                Login.setUser(this,id)
                 // 팔로워 페이지로 이동
                 val intent = Intent(this, FollowerListActivity::class.java)
                 // id 함께 전달
